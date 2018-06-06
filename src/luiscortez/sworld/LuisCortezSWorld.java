@@ -5,6 +5,9 @@
  */
 package luiscortez.sworld;
 
+import AbstractFactory.AbstractFactory;
+import AbstractFactory.FactoryDeRazas;
+
 /**
  *
  * @author Lucho
@@ -15,7 +18,9 @@ public class LuisCortezSWorld {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+             AbstractFactory reino = null;
+               
+          reino.getDothraki();
     }
     
 }
