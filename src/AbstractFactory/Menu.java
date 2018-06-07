@@ -14,13 +14,17 @@ import java.util.Scanner;
 public class Menu {
         AbstractFactory reino;
         public void Menu_Opciones() {
+             Scanner option = new Scanner(System.in);
+             String nick1,nick2;
         System.out.println("*====== Bienvenido al Juego =======*\n\n");
         System.out.println("*====== Escribir Nick de Jug1 =======*\n\n");
-        
-        System.out.println("*====== Escribir Nick de Jug =======*\n\n"
-                + "1. Elfo.\n"
-                + "2. Orco.\n"
-                + "3. Salir \n\n"
+        nick1=option.nextLine();
+        System.out.println("*====== Escribir Nick de Jug2 =======*\n\n");
+                nick2=option.nextLine();
+                System.out.println( "1. Dothraki.\n"
+                + "2. NightsWatch.\n"
+                + "3. TheChildren \n\n"
+                + "4. Salir \n\n"
                 + "Opcion: ");
     }
         
@@ -40,7 +44,7 @@ public class Menu {
                     case 2:
 
                         break;
-                                        case 3:
+                    case 3:
                         System.out.println(".....Saliendo del Sistema.....\n");
                         break;
                                         default:

@@ -3,12 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package TheChildren.EdificacionTheChildren;
+package EdificacionMilicia;
 
 /**
  *
  * @author Lucho
  */
-public class EdificacionDeRecurso {
+public class Soldado implements EdificacionMilicia {
+
+    @Override
+    public void speak() {
+        System.out.println("Soy un soldado");
+    }
     
 }

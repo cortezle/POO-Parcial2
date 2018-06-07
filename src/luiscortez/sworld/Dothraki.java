@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Dothraki;
+package luiscortez.sworld;
 
 /**
  *
  * @author Lucho
  */
-public interface Dothraki {
+public class Dothraki {
     
 }

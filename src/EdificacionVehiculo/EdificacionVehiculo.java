@@ -3,14 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Dothraki.EdificacionDothraki;
-
-import Dothraki.Dothraki;
+package EdificacionVehiculo;
 
 /**
  *
  * @author Lucho
  */
-public class EdificacionDeVehiculos implements Dothraki {
+public interface EdificacionVehiculo {
     
 }

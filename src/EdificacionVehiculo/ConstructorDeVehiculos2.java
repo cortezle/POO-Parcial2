@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package NightsWatch;
+package EdificacionVehiculo;
 
 /**
  *
  * @author Lucho
  */
-public interface NightsWatch {
+public class ConstructorDeVehiculos2 implements EdificacionVehiculo {
     
 }

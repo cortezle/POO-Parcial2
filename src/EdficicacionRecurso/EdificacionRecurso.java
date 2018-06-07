@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package NightsWatch.EdificacionNightsWatch;
+package EdficicacionRecurso;
 
 /**
  *
  * @author Lucho
  */
-public class EdificacionDeMilicia {
+public interface EdificacionRecurso {
     
 }

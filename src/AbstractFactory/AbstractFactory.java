@@ -5,16 +5,18 @@
  */
 package AbstractFactory;
 
-import Dothraki.Dothraki;
-import NightsWatch.NightsWatch;
-import TheChildren.TheChildren;
+import EdficicacionRecurso.EdificacionRecurso;
+import EdificacionMilicia.EdificacionMilicia;
+import EdificacionVehiculo.EdificacionVehiculo;
+
+
 
 /**
  *
  * @author Lucho
  */
 public interface AbstractFactory {
-    Dothraki getDothraki();
-    NightsWatch getNightsWatch();
-    TheChildren getTheChildren();
+    EdificacionRecurso getEdificacionRecurso(String type);
+    EdificacionMilicia getEdificacionMilicia(String type);
+    EdificacionVehiculo getEdificacionVehiculo(String type);
 }

@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package TheChildren.EdificacionTheChildren;
+package luiscortez.sworld;
 
 /**
  *
  * @author Lucho
  */
-public class EdificacionDeMilicia {
+public class TheChildren {
     
 }
