@@ -19,7 +19,7 @@ public class MiliciaFactory implements AbstractFactory {
     public EdificacionMilicia getEdificacionMilicia(String tipo) {
         switch (tipo) {
             case "soldado":
-                return new Soldado();
+                return new Soldado.SoldadoBuilder("Dothraki",12,12,12).build();
 
         }
         return null;

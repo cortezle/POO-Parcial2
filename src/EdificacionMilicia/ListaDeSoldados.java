@@ -5,12 +5,13 @@
  */
 package EdificacionMilicia;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Lucho
  */
-public interface EdificacionMilicia {
+public class ListaDeSoldados {
+    private ArrayList<Soldado> listasoldados;
     
-    void speak();
-    int ataque(int ataque);
 }
