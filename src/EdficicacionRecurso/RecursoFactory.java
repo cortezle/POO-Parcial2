@@ -21,7 +21,7 @@ public class RecursoFactory implements AbstractFactory{
             case "generador3":
                 return new GeneradorDeRecurso3();
             case "recolector1":
-                return new RecolectorDeRecursos1();
+                return new RecolectorDeRecursos1.RecolectorDeRecursos1Builder("Dothraki", 0, 0, 0).build();
             case "recolector2":
                 return new RecolectorDeRecursos2();
         }

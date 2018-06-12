@@ -54,7 +54,8 @@ public class Soldado implements EdificacionMilicia {
 
     @Override
     public int ataque(int ataque) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        return 0;
     }
    
     public static class SoldadoBuilder{

@@ -21,6 +21,7 @@ import java.util.ArrayList;
  */
 public class luiscortezsworld {
     public static void main(String[] args){
+        
         MenuJuego m= new MenuJuego();
         m.EleccionDeRazaNick();
         m.Opcion_Seleccionada();

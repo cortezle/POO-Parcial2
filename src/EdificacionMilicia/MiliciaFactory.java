@@ -18,8 +18,12 @@ public class MiliciaFactory implements AbstractFactory {
     @Override
     public EdificacionMilicia getEdificacionMilicia(String tipo) {
         switch (tipo) {
-            case "soldado":
+            case "dothraki":
                 return new Soldado.SoldadoBuilder("Dothraki",12,12,12).build();
+            case "nightswatch":
+                return new Soldado.SoldadoBuilder("Nights Watch",12,12,12).build();
+            case "thechildren":
+                return new Soldado.SoldadoBuilder("The Children",12,12,12).build();
 
         }
         return null;
