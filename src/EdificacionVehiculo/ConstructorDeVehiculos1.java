@@ -14,6 +14,7 @@ import EdificacionMilicia.Soldado;
  */
 public class ConstructorDeVehiculos1 implements EdificacionVehiculo {
     
+    private int id_vh;
     private int ataque;
     private int defensa;
     private String raza;
@@ -24,6 +25,7 @@ public class ConstructorDeVehiculos1 implements EdificacionVehiculo {
         this.defensa = builder.defensa;
         this.raza = builder.raza;
         this.cantfase = builder.cantfase;
+        this.id_vh = builder.id_vh;
     }
 
     public int getAtaque() {
@@ -41,18 +43,26 @@ public class ConstructorDeVehiculos1 implements EdificacionVehiculo {
     public int getcantfase() {
         return cantfase;
     }
+
+    public int getId_vh() {
+        return id_vh;
+    }
+    
+    
     
         public static class ConstructorDeVehiculos1Builder{
             private final String raza;
             private final int ataque;
             private final int defensa;
             private final int cantfase;
+            private final int id_vh;
 
-        public ConstructorDeVehiculos1Builder(String raza, int ataque, int defensa, int cantfase) {
+        public ConstructorDeVehiculos1Builder(String raza, int ataque, int defensa, int cantfase, int id_vh) {
             this.raza = raza;
             this.ataque = ataque;
             this.defensa = defensa;
             this.cantfase = cantfase;
+            this.id_vh= id_vh;
         }
         
         public ConstructorDeVehiculos1 build(){
@@ -63,9 +73,7 @@ public class ConstructorDeVehiculos1 implements EdificacionVehiculo {
             
          @Override
     public String toString() {
-        return "Vehiculo{" + "raza=" + raza + ", ataque=" + ataque + ", defensa=" + defensa + ", cantfase=" + cantfase + '}';
-    
-
-}
+        return "Vehiculo{" + "id= " + this.id_vh +  ", raza=" + raza +", ataque=" + ataque + ", defensa=" + defensa + ", cantfase=" + cantfase + '}';
+    }
     
 }

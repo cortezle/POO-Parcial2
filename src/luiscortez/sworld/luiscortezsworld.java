@@ -23,9 +23,10 @@ public class luiscortezsworld {
     public static void main(String[] args){
         
         MenuJuego m= new MenuJuego();
-        m.EleccionDeRazaNick();
-        m.Opcion_Seleccionada();
-    
+       int i=0;
+        while(i==0){
+        m.Opcion_Seleccionada(m.EleccionDeRazaNick());
+        }
     
         
                 

@@ -20,11 +20,11 @@ import luiscortez.sworld.NombreRaza;
 
 public class MenuJuego {
         AbstractFactory reino;
-        private ListaDeSoldados listaSoldado = new ListaDeSoldados();
+        private ListaDeCreacion listaCreacion1 = new ListaDeCreacion();
         public static int fases=0;
         NombreRaza p= new NombreRaza();
         String nick1,nick2,raza1,raza2,prueba;
-        public void EleccionDeRazaNick() {
+        public String EleccionDeRazaNick() {
             
              Scanner option = new Scanner(System.in);
              
@@ -33,7 +33,8 @@ public class MenuJuego {
         nick1=option.nextLine();
         System.out.println("*====== Escribir Nick de Jug2 =======*");
         nick2=option.nextLine();
-            System.out.println("\n\n");
+            System.out.println("\n");
+            System.out.println("Elegi tu raza: \n");
                 System.out.println( "1. Dothraki.\n"
                 + "2. NightsWatch.\n"
                 + "3. TheChildren \n\n"
@@ -82,11 +83,11 @@ public class MenuJuego {
                     
             }
             
-
+            return raza1;
         }
         
         public void Menu_Opciones() {
-        System.out.println("*====== Bienvenido al Juego =======*\n\n"
+        System.out.println("*====== Bienvenido al Juego=======*\n\n"
                 + "1.Crear EdificacionDeRecurso tipo 1.\n"
                 + "2.Crear EdificacionDeRecurso tipo2.\n"
                 + "3.Recolectar Recurso1.\n"
@@ -94,16 +95,19 @@ public class MenuJuego {
                 + "5.Crear Soldado\n"
                 + "6.Crear EdificacionMilicia\n"
                 + "7.Atacar\n"
-                + "8.CrearEdificacionVehiculo1\n"
-                + "9.CrearEdificacionVehiculo2\n"
-                + "10. Salir \n\n"
+                + "8.CrearVehiculo1\n"
+                + "9.CrearVehiculo2\n"
+                + "10.Mostrar Soldados\n"
+                + "11.Mostrar Vehiculos\n"
+                + "12.Mostrar Recursos\n"
+                + "13. Salir \n\n"
                 + "Opcion: ");
     }
         
-        public void Opcion_Seleccionada(){
+        public void Opcion_Seleccionada(String raza1){
             int opcion=0;
                     Scanner option = new Scanner(System.in);
-            while (opcion != 10) {
+            while (opcion != 13) {
             Menu_Opciones();
             try {
                 opcion = option.nextInt();
@@ -112,11 +116,14 @@ public class MenuJuego {
                     
                     case 1:
                         System.out.println("Crear EdificacionDeRecurso tipo 1");
-
+                        listaCreacion1.AgregarRecursoJug1(raza1);
+                        System.out.println("Se creo edificacion de recurso");
 
                         break;
                     case 2:
                         System.out.println("Crear EdificacionDeRecurso tipo 2");
+                        listaCreacion1.AgregarRecursoJug1(raza1+"2");
+                        System.out.println("Se creo edificacion de recurso");
 
                         break;
                     case 3:
@@ -128,31 +135,40 @@ public class MenuJuego {
 
                         break;
                     case 5:
-                        
-                        listaSoldado.AgregarSoldadoJug1(raza1);
-                        listaSoldado.Mostrar_Soldado();
-                           break;
 
+                        listaCreacion1.AgregarSoldadoJug1(raza1);
+                        System.out.println("se agrego soldado "+raza1+"a tu ejercito");
+                        break;
+              
+                         
                         
                     case 6:
                         System.out.println("Crear EdificacionMilicia");
-
+                        listaCreacion1.AgregarEdMilicia();
                         break;
                     case 7:
                         System.out.println("Atacar");
                         break;
                     case 8:
-                        System.out.println("Vehiculotipo1\n");
-                        AbstractFactory raza;
-                        raza = FactoryDeEdificaciones.getAbstractFactory("vehiculo");
-                        EdificacionVehiculo veh1 = raza.getEdificacionVehiculo("vh1");
-                        System.out.println(veh1.toString());
+                        System.out.println("Vehiculotipo2");
+                        listaCreacion1.AgregarVehiculoJug1(raza1);
+                        System.out.println("Agregado");
                         break;
                     case 9:
                         System.out.println("Vehiculotipo2");
-
+                        listaCreacion1.AgregarVehiculoJug1(raza1+"2");
+                        System.out.println("Agregado");
                         break;
                     case 10:
+                        listaCreacion1.Mostrar_Soldado();
+                        break;
+                    case 11:
+                        listaCreacion1.Mostrar_Vehiculo();
+                        break;
+                    case 12:
+                        listaCreacion1.Mostrar_Recurso();
+                        break;
+                    case 13:
                         System.out.println(".....Saliendo del Sistema.....\n");
                         break;
                     default:
@@ -171,75 +187,22 @@ fases=fases+1;
             
             }
         }
-        public void Opcion_SeleccionadaJug2(){
-            int opcion=0;
-                    Scanner option = new Scanner(System.in);
-            while (opcion != 10) {
-            Menu_Opciones();
-            try {
-                opcion = option.nextInt();
-                switch (opcion)
-                        {
-                    
-                    case 1:
-                        System.out.println("Crear EdificacionDeRecurso tipo 1");
 
-
-                        break;
-                    case 2:
-                        System.out.println("Crear EdificacionDeRecurso tipo 2");
-
-                        break;
-                    case 3:
-                        System.out.println("Recolectar Recurso1");
-
-                        break;
-                    case 4:
-                        System.out.println("Recolectar Recurso2");
-
-                        break;
-                    case 5:
-                        
-                        listaSoldado.AgregarSoldadoJug1(raza1);
-                        listaSoldado.Mostrar_Soldado();
-                           break;
-
-                        
-                    case 6:
-                        System.out.println("Crear EdificacionMilicia");
-
-                        break;
-                    case 7:
-                        System.out.println("Atacar");
-                        break;
-                    case 8:
-                        System.out.println("Vehiculotipo1\n");
-                        AbstractFactory raza;
-                        raza = FactoryDeEdificaciones.getAbstractFactory("vehiculo");
-                        EdificacionVehiculo veh1 = raza.getEdificacionVehiculo("vh1");
-                        System.out.println(veh1.toString());
-                        break;
-                    case 9:
-                        System.out.println("Vehiculotipo2");
-
-                        break;
-                    case 10:
-                        System.out.println(".....Saliendo del Sistema.....\n");
-                        break;
-                    default:
-                        System.out.println("Ingrese una opcion valida");
-                        break;
         
-                }
-            } catch (Exception e) {
+        
+        /*public void MenuJugadores(){
+            int opcion=0;
+            Scanner option= new Scanner(System.in);
+            while(opcion!=10){
+                //Opcion_SeleccionadaJug2();
+                try{
+                    opcion = option.nextInt();
+                    Opcion_Seleccionada();
+                }catch (Exception e) {
                 System.err.println("Lo que se ha ingresado puede que no sea un numero\n"
                         + "Por favor ingrese un numero\n");
                 option.nextLine();
             }
-            
-fases=fases+1;
-                System.out.println("Fase: " + fases);
-            
             }
-        }
+        }*/
 }

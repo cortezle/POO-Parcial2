@@ -9,6 +9,7 @@ import AbstractFactory.AbstractFactory;
 import EdificacionMilicia.EdificacionMilicia;
 import EdificacionVehiculo.EdificacionVehiculo;
 
+
 /**
  *
  * @author Lucho
@@ -18,12 +19,21 @@ public class RecursoFactory implements AbstractFactory{
     @Override
     public EdificacionRecurso getEdificacionRecurso(String tipo) {
         switch (tipo) {
-            case "generador3":
-                return new GeneradorDeRecurso3();
-            case "recolector1":
-                return new RecolectorDeRecursos1.RecolectorDeRecursos1Builder("Dothraki", 0, 0, 0).build();
-            case "recolector2":
-                return new RecolectorDeRecursos2();
+        
+            case "dothraki":
+                return new RecolectorDeRecursos1.RecolectorDeRecursos1Builder("grass",32,53,3).build();
+            case "dothraki2":
+                return new RecolectorDeRecursos1.RecolectorDeRecursos1Builder("plata",32,53,3).build();
+            case "nightswatch":
+                return new RecolectorDeRecursos1.RecolectorDeRecursos1Builder("oro",32,53,3).build();
+            case "nightswatch2":
+                return new RecolectorDeRecursos1.RecolectorDeRecursos1Builder("Hierro",32,53,3).build();
+            case "thechildren":
+                return new RecolectorDeRecursos1.RecolectorDeRecursos1Builder("dragonglass",32,53,3).build();
+            case "thechildren2":
+                return new RecolectorDeRecursos1.RecolectorDeRecursos1Builder("Elixir de Dragon",32,53,3).build();
+
+        
         }
         return null;
     }
@@ -37,6 +47,8 @@ public class RecursoFactory implements AbstractFactory{
     public EdificacionVehiculo getEdificacionVehiculo(String type) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+
 
     
 }
