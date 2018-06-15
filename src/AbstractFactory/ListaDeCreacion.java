@@ -21,8 +21,11 @@ public class ListaDeCreacion {
         private ArrayList<Soldado> Lista_Soldado;
         private ArrayList<Soldado> Lista_Soldado2;
         private ArrayList<ConstructorDeVehiculos1> Lista_Vehiculo;
+        private ArrayList<ConstructorDeVehiculos1> Lista_Vehiculo2;
         private ArrayList<RecolectorDeRecursos1> Lista_Recurso;
+        private ArrayList<RecolectorDeRecursos1> Lista_Recurso2;
         private ArrayList<EdificacionMilicia> Lista_Milicia;
+        private ArrayList<EdificacionMilicia> Lista_Milicia2;
 
         AbstractFactory raza;
         
@@ -31,8 +34,11 @@ public class ListaDeCreacion {
         Lista_Soldado = new ArrayList<>();
         Lista_Soldado2 = new ArrayList<>();
         Lista_Milicia = new ArrayList<>();
+        Lista_Milicia2 = new ArrayList<>();
         Lista_Vehiculo = new ArrayList<>();
+        Lista_Vehiculo2 = new ArrayList<>();
         Lista_Recurso = new ArrayList<>();
+        Lista_Recurso2 = new ArrayList<>();
     }
     
     public void AgregarSoldadoJug1(String tipo) {
@@ -53,9 +59,21 @@ public class ListaDeCreacion {
     }
 
     public void AgregarSoldadoJug2(String tipo) {
+        raza = FactoryDeEdificaciones.getAbstractFactory("milicia");
         EdificacionMilicia soldado1 = raza.getEdificacionMilicia(tipo);
         Lista_Soldado2.add((Soldado) soldado1);
 
+    }
+    
+        public void AgregarVehiculoJug2(String tipo) {
+                        raza = FactoryDeEdificaciones.getAbstractFactory("vehiculo");
+                        EdificacionVehiculo veh1 = raza.getEdificacionVehiculo(tipo);
+                        Lista_Vehiculo2.add((ConstructorDeVehiculos1) veh1);
+    }
+    public void AgregarRecursoJug2(String tipo) {
+                        raza = FactoryDeEdificaciones.getAbstractFactory("recurso");
+                        EdificacionRecurso recurso = raza.getEdificacionRecurso(tipo);
+                        Lista_Recurso2.add((RecolectorDeRecursos1) recurso);
     }
 
     public int AgregarEdMilicia() {
@@ -77,6 +95,23 @@ public class ListaDeCreacion {
     }
         public void Mostrar_Recurso() {
         for (RecolectorDeRecursos1 e : Lista_Recurso) {
+            System.out.println(e.toString());
+
+        }
+    }
+        public void Mostrar_Soldado2() {
+        for (Soldado e : Lista_Soldado2) {
+            System.out.println(e.toString());
+
+        }
+    }
+        public void Mostrar_Vehiculo2() {
+        for (ConstructorDeVehiculos1 e : Lista_Vehiculo2) {
+            System.out.println(e.toString());
+        }
+    }
+        public void Mostrar_Recurso2() {
+        for (RecolectorDeRecursos1 e : Lista_Recurso2) {
             System.out.println(e.toString());
 
         }

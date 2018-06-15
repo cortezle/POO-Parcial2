@@ -5,13 +5,8 @@
  */
 package luiscortez.sworld;
 
-import AbstractFactory.AbstractFactory;
-import AbstractFactory.FactoryDeEdificaciones;
 import AbstractFactory.MenuJuego;
-import EdificacionMilicia.EdificacionMilicia;
-import EdificacionMilicia.Soldado;
-import java.awt.Menu;
-import java.util.ArrayList;
+import static java.lang.Boolean.TRUE;
 
 
 
@@ -21,12 +16,16 @@ import java.util.ArrayList;
  */
 public class luiscortezsworld {
     public static void main(String[] args){
-        
+        String raza1,raza2;
         MenuJuego m= new MenuJuego();
-       int i=0;
-        while(i==0){
-        m.Opcion_Seleccionada(m.EleccionDeRazaNick());
-        }
+       raza1=m.EleccionDeRazaNick();
+       raza2=m.EleccionDeRazaNick();
+       
+       do{
+           m.Opcion_Seleccionada(raza1);
+           m.Opcion_Seleccionada2(raza2);
+       }
+        while(m.Opcion_Seleccionada(raza1)!=3);
     
         
                 
