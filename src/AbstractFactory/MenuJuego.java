@@ -93,6 +93,7 @@ public class MenuJuego {
                     Scanner option = new Scanner(System.in);
             while (opcion != 14) {
             Menu_Opciones();
+                System.out.println("Turno de : "+raza1);
             try {
                 opcion = option.nextInt();
                 switch (opcion)
@@ -161,6 +162,7 @@ public class MenuJuego {
                     case 14:
                         System.out.println(" tu turno!");
                         return 2;
+                        
                     case 15:
                         return 3;
                     default:
@@ -185,6 +187,7 @@ fases=fases+1;
                     Scanner option = new Scanner(System.in);
             while (opcion != 14) {
             Menu_Opciones();
+            System.out.println("Turno de : "+raza1);
             try {
                 opcion = option.nextInt();
                 switch (opcion)
@@ -250,8 +253,7 @@ fases=fases+1;
                         listaCreacion1.Mostrar_Recurso();
                         listaCreacion1.Mostrar_Soldado();
                         listaCreacion1.Mostrar_Vehiculo();
-
-                        
+                    break;
                     case 14:
                         System.out.println(" tu turno!");
                         return 2;
